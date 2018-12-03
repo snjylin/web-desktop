@@ -1,0 +1,43 @@
+// "out": false, "compress": false
+
+/* 桌面图标样式 */
+.appicon-wrapper{
+  position: absolute;
+  width: 74px;
+  height: 66px;
+  padding-bottom:34px;
+  font-size: 0;
+  user-select: none;
+  .appicon{
+    cursor: pointer;
+    &:hover{
+      background: rgba(0,0,0,.1);
+    }
+    .ico{
+      display: inline-block;
+      width: 44px;
+      height: 45px;
+      margin: 4px 15px;
+      background: url(../img/default.png);
+      background-size: 100%;
+    }
+    p.name{
+      max-height: 2em;
+    }
+    .name{
+      width: 72px;
+      border: 1px solid transparent;
+      line-height: 14px;
+      font-size: 14px;
+      text-align: center;
+      word-break: break-word;
+      overflow: hidden;
+      &:focus{
+        outline: none;
+        border-color: #999;
+        background: #fff;
+        color: #333;
+      }
+    }
+  }
+}

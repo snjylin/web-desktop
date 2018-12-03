@@ -1,0 +1,65 @@
+// "out": false
+// "compress": true
+
+/* 弹窗样式 */
+.mod{
+  position: relative;
+  min-width: 300px;
+  min-height: 200px;
+  border: 1px solid @color;
+  border-radius: 6px;
+  background: #fff;
+  z-index: 2;
+  .mod-hd{
+    position: relative;
+    height: 30px;
+    padding: 0 10px;
+    line-height: 30px;
+    border-radius: 6px 6px 0 0;
+    background: -webkit-linear-gradient(top, #98baf3 0%, #fff 100%);
+    color: #333;
+    .fork{
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 30px;
+      font-size: 20px;
+      line-height: 30px;
+      text-align: center;
+      cursor: pointer;
+    }
+  }
+  .mod-bd{
+    min-height: 40px;
+    padding: 0 10px;
+  }
+  .mod-ft{
+    position: absolute;
+    right:0;
+    bottom: 0;
+    width: calc(100% - 20px);
+    height: 40px;
+    padding: 0 10px;
+    span{
+      display: inline-block;
+      float: right;
+      margin: 10px 0 0 4px;
+      padding: 0 4px;
+      border-radius: 3px;
+      background: #cfa45c;
+      color: #fff;
+      line-height: 20px;
+      font-size: 14px;
+      font-weight: 300;
+      cursor: pointer;
+    }
+  }
+}
+#mark{
+  background: #666;
+  opacity: .3;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}

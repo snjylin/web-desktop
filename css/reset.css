@@ -1,0 +1,6 @@
+body,div,p,h1,h2,h3{margin: 0;padding: 0;}
+/* 去掉img标签没有src属性或src属性值为空时的灰色边框 */
+img[src=""],img:not([src]){
+  filter: alpha(opacity=0);
+  opcity: 0;
+}
