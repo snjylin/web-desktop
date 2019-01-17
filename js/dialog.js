@@ -13,7 +13,8 @@ function Dialog(opt){
       border: '1px solid #85adf2',
       borderRadius: '6px',
       background: '#fff'
-    }
+    },
+    callback: function(){}
   };
   extend(this.settings, opt);
   this.initial();
@@ -21,9 +22,10 @@ function Dialog(opt){
   var dragsettings = {
     class: 'mod_'+this.settings.iNow
   };
+  // 继承Drag函数
   Drag.call(this, dragsettings);
 }
-
+// 继承Drag函数
 extend(Dialog.prototype, Drag.prototype);
 
 Dialog.prototype.json = {};
@@ -42,6 +44,8 @@ Dialog.prototype.initial = function(){
     }
     this.json[this.settings.iNow] = false;
   }
+
+  this.settings.callback();
 };
 Dialog.prototype.create = function(){
   this.oDialog = document.createElement('div');

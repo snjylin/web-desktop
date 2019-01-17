@@ -16,12 +16,16 @@ img:not([src]) {
 .hide {
   display: none;
 }
-#doc {
-  width: 100%;
-  height: 100%;
-  background: url(../img/bg_default.jpg) no-repeat;
-  background-size: 100%;
-  background-position: center;
+.btn-red {
+  background-color: #ff0;
+  color: #fff;
+}
+.btn-gray {
+  background-color: #999;
+  color: #333;
+}
+body {
+  background: #abcdef;
 }
 /* 弹窗样式 */
 .mod {
@@ -29,15 +33,20 @@ img:not([src]) {
   min-width: 300px;
   min-height: 200px;
   border: 1px solid #85adf2;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
   border-radius: 6px;
   background: #fff;
   z-index: 2;
 }
 .mod .mod-hd {
+  overflow: hidden;
   position: relative;
   height: 30px;
   padding: 0 10px;
   line-height: 30px;
+  -webkit-border-radius: 6px 6px 0 0;
+  -moz-border-radius: 6px 6px 0 0;
   border-radius: 6px 6px 0 0;
   background: -webkit-linear-gradient(top, #98baf3 0%, #fff 100%);
   color: #333;
@@ -69,6 +78,8 @@ img:not([src]) {
   float: right;
   margin: 10px 0 0 4px;
   padding: 0 4px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
   border-radius: 3px;
   background: #cfa45c;
   color: #fff;
@@ -78,7 +89,7 @@ img:not([src]) {
   cursor: pointer;
 }
 #mark {
-  background: #666;
+  background: #999;
   opacity: .3;
   position: absolute;
   left: 0;
@@ -98,7 +109,8 @@ img:not([src]) {
   cursor: pointer;
 }
 .appicon-wrapper .appicon:hover {
-  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.8);
 }
 .appicon-wrapper .appicon .ico {
   display: inline-block;
@@ -132,28 +144,49 @@ img:not([src]) {
   width: 100%;
   height: 35px;
   line-height: 35px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  background: rgba(255, 255, 255, 0.7);
+  border-top: 2px solid transparent;
+  border-image: url("../img/border_img.png") 4 4 stretch;
+  background: rgba(255, 255, 255, 0.3);
   font-size: 12px;
   text-align: center;
   cursor: pointer;
 }
-#taskbar #startmenu {
+#taskbar > div {
   position: absolute;
-  width: 44px;
-}
-#taskbar #launchbar {
-  position: absolute;
-  left: 44px;
   width: 44px;
   height: 35px;
+  line-height: 35px;
+  box-sizing: border-box;
+}
+#taskbar > div:not(:last-of-type):hover {
+  /* First-Of-Type 似乎更稳定 */
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-image: url("../img/border_img.png") 4 4 stretch;
+}
+#taskbar #launchbar {
+  left: 44px;
 }
 #taskbar #Apps {
-  position: absolute;
+  left: 88px;
 }
 #taskbar #language {
-  position: absolute;
+  left: 132px;
 }
 #taskbar #notearea {
-  position: absolute;
+  right: 76px;
+}
+#taskbar #notearea .item {
+  width: 22px;
+}
+#taskbar #time {
+  right: 8px;
+  width: 68px;
+}
+#taskbar #showWindow {
+  right: 0;
+  width: 6px;
+}
+#taskbar #showWindow:hover {
+  background: #fff;
 }

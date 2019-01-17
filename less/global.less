@@ -1,7 +1,39 @@
 // "out": false, "compress": false
 
-@color: #85adf2;
+@import "color.less";
+@import "base.less";
+
+@basecolor: @blue;
+@images: "../img";
 
 .hide{
   display: none;
+}
+.border(@w: 1px, @s: solid, @c: #eee){
+  border: @w @s @c;
+}
+.border-img(@dir: top, @img: 'border_img.png'){
+  border-@{dir}: 2px solid transparent;
+  border-image: url("@{images}/@{img}") 4 4 stretch;
+}
+
+.border-radius(@radius: 6px) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+.box-shadow(@x: 0; @y: 0; @blur: 1px; @basecolor: @black) {
+  -webkit-box-shadow: @arguments;
+     -moz-box-shadow: @arguments;
+          box-shadow: @arguments;
+}
+.btn {
+  &-red {
+    background-color: @red;
+    color: #fff;
+  }
+  &-gray {
+    background-color: @gray;
+    color: #333;
+  }
 }

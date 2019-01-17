@@ -1,12 +1,17 @@
 function AppIcon(options){
+  var This = this;
   this.aAppicons = document.getElementsByClassName('appicon-wrapper');
   this.iNow = this.aAppicons.length;
+
   this.settings = {
     icon: 'img/default.png',
     name: '未命名-' + this.iNow,
     wrapper: 'appicons',
-    clientHeight: '680'
+    clientHeight: '680',
+    dialogOpt: {},
+    callback: function(){}
   };
+
   extend(this.settings, options);
   this.init();
 }
@@ -19,6 +24,7 @@ AppIcon.prototype.init = function(){
   this.calcposition();
   this.rename();
   this.open();
+  this.settings.callback();
 };
 /**
  * 创建桌面图标
@@ -35,6 +41,10 @@ AppIcon.prototype.create = function(){
   this.wrapper = document.getElementById(this.settings.wrapper);
   this.wrapper.appendChild(this.oAppIcon);
 };
+/**
+ * 计算图标位置
+ * @return {[type]} [description]
+ */
 AppIcon.prototype.calcposition = function(){
   for (var i = 0; i < this.aAppicons.length; i++) {
     this.aAppicons[i].style.left = Math.floor(i / (Math.floor(this.settings.clientHeight / 100))) * 74 + 'px';
@@ -68,10 +78,13 @@ AppIcon.prototype.rename = function(){
     This.oNameP.innerHTML = This.name;
     this.style.display = 'none';
     This.oNameP.style.display = 'block';
+
+    This.settings.name = This.name;
+    This.settings.dialogOpt.title = This.name;
   };
   this.oNameInp.ondblclick = function(){
     This.open = null;
-  }
+  };
 };
 /**
  * 双击打开桌面图标
@@ -81,7 +94,10 @@ AppIcon.prototype.open = function(){
   var This = this;
   this.oAppIcon.ondblclick = function(){
     clearTimeout(This.timer);
-    new Dialog();
+
+    This.settings.dialogOpt.title ? This.settings.dialogOpt.title = This.settings.dialogOpt.title : This.settings.dialogOpt.title = This.settings.name;
+
+    new Dialog(This.settings.dialogOpt);
   };
 };
 /**

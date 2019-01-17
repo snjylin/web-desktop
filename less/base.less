@@ -1,0 +1,159 @@
+// "out": false, "compress": false
+
+//width
+.w(@w, @u: px) when (isnumber(@w)){
+  width: unit(@w, @u);
+}
+.w(@w) when (default()){
+  width: @w;
+}
+.minw(@minw, @u: px) when (isnumber(@minw)){
+  width: unit(@minw, @u);
+}
+.minw(@minw) when (default()){
+  width: @minw;
+}
+.maxw(@maxw, @u: px) when (isnumber(@maxw)){
+  width: unit(@maxw, @u);
+}
+.maxw(@maxw) when (default()){
+  width: @maxw;
+}
+
+//height
+.h(@h, @u: px) when (isnumber(@h)){
+  height: unit(@h, @u);
+}
+.h(@h) when (default()){
+  height: @h;
+}
+.minh(@minh, @u: px) when (isnumber(@minh)){
+  width: unit(@minh, @u);
+}
+.minh(@minh) when (default()){
+  width: @minh;
+}
+.maxh(@maxh, @u: px) when (isnumber(@maxh)){
+  width: unit(@maxh, @u);
+}
+.maxh(@maxh) when (default()){
+  width: @maxh;
+}
+
+//margin
+.m(@m, @u: px) when (isnumber(@m)){
+  margin: unit(@m, @u);
+}
+.m(@m) when (default()){
+  margin: @m;
+}
+.mt(@mt, @u: px){
+  margin-top: unit(@mt, @u);
+}
+.mr(@mr, @u: px){
+  margin-right: unit(@mr, @u);
+}
+.mb(@mb, @u: px){
+  margin-bottom: unit(@mb, @u);
+}
+.ml(@ml, @u: px){
+  margin-left: unit(@ml, @u);
+}
+.mtb(@mtb, @u: px){
+  margin-top: unit(@mtb, @u);
+  margin-bottom: unit(@mtb, @u);
+}
+.mrl(@mrl, @u: px){
+  margin-top: unit(@mrl, @u);
+  margin-bottom: unit(@mrl, @u);
+}
+
+//padding
+.pd(@pd, @u: px){
+  padding: unit(@pd, @u);
+}
+.pdt(@pt, @u: px){
+  padding-top: unit(@pt, @u);
+}
+.pdr(@pdr, @u: px){
+  padding-right: unit(@pdr, @u);
+}
+.pdb(@pdb, @u: px){
+  padding-bottom: unit(@pdb, @u);
+}
+.pdl(@pdl, @u: px){
+  padding-left: unit(@pdl, @u);
+}
+.pdtb(@pdtb, @u: px){
+  padding-top: unit(@pdtb, @u);
+  padding-bottom: unit(@pdtb, @u);
+}
+.pdrl(@pdrl, @u: px){
+  padding-top: unit(@pdrl, @u);
+  padding-bottom: unit(@pdrl, @u);
+}
+
+//border
+.bdr(@w: 1, @u: px, @c: #eee){
+  border: unit(@w, @u) solid @c;
+}
+
+//font
+.ff(@ff){
+  font-family: @ff, sans-serif;
+}
+.fs(@fs, @u: px){
+  font-size: unit(@fs, @u);
+}
+.fw(@fw, @u: px) when (isnumber(@fw)){
+  font-weight: unit(@fw, @u);
+}
+.fw(@fw){
+  font-weight: @fw;
+}
+.lh(@lh, @u: px){
+  line-height: unit(@lh, @u);
+}
+.ls(@ls, @u: px){
+  letter-spacing: unit(@ls, @u);
+}
+.c(@c: #333){
+  color: @c;
+}
+
+//background
+.bg(@img,  @repeat: no-repeat) when (default()){
+  background: url("@{images}/@{img}") @repeat;
+}
+.bg(@bgc: #fff) when (iscolor(@bgc)){
+  background: @bgc;
+}
+.bgm(@img,  @repeat: no-repeat) when (isstring(@img)){
+  background-image: url("@{images}/@{img}") @repeat;
+}
+.bgc(@bgc: #fff){
+  background-color: @bgc;
+}
+.bgs(@bgs, @u: px) when (isnumber(@bgs)){
+  background-size: unit(@bgs, @u);
+}
+.bgs(@bgs) when (default()){
+  background-size: @bgs;
+}
+.bgp(@x: 0, @y: 0, @u: px) when (isnumber(@x)) and (isnumber(@y)){
+  background-position: unit(@x, @u), unit(@y, @u);
+}
+.bgp(@bgp) when (default()){
+  background-position: @bgp;
+}
+.bgrp(@bgrp: no-repeat){
+  background-repeat: @bgrp;
+}
+
+//float
+.fl(){
+  float: left;
+}
+.fr(){
+  float: right;
+}

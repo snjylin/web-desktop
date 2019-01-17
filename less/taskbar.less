@@ -1,33 +1,56 @@
 // "out": false, "compress": false
 
+@width: 44px;
+@heigth: 35px;
+
 #taskbar{
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 35px;
-  line-height: 35px;
-  border-top: 1px solid rgba(0,0,0,.1);
-  background: rgba(255,255,255,.7);
+  height: @heigth;
+  line-height: @heigth;
+  .border-img();
+  background: rgba(255,255,255,.3);
   font-size: 12px;
   text-align: center;
   cursor: pointer;
-  #startmenu{
+  &>div{
     position: absolute;
-    width: 44px;
+    width: @width;
+    height: @heigth;
+    line-height: @heigth;
+    box-sizing: border-box;
+    &:not(:last-of-type):hover{ /* First-Of-Type 似乎更稳定 */
+      .border-img(@dir: left);
+      .border-img(@dir: right);
+    }
+  }
+  #startmenu{
   }
   #launchbar{
-    position: absolute;
-    left: 44px;
-    width: 44px;
-    height: 35px;
+    left: @width;
   }
   #Apps{
-    position: absolute;
+    left: @width*2;
   }
   #language{
-    position: absolute;
+    left: @width*3;
   }
   #notearea{
-    position: absolute;
+    right: 76px;
+    .item{
+      width: 22px;
+    }
+  }
+  #time{
+    right: 8px;
+    width: 68px;
+  }
+  #showWindow{
+    right: 0;
+    width: 6px;
+    &:hover{
+      background: @white;
+    }
   }
 }

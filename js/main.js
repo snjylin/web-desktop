@@ -7,15 +7,18 @@ window.onload = function(){
   var oApps = document.getElementById('Apps');
   var oLanguage = document.getElementById('language');
   var oNotearea = document.getElementById('notearea');
-  var oNotearea = document.getElementById('time');
-  var oNotearea = document.getElementById('show_window');
+  var oTime = document.getElementById('time');
+  var oShowWindow = document.getElementById('showWindow');
 
   var clientHeight = document.documentElement.clientHeight;
   document.body.style.height = clientHeight + 'px';
 
   oStartmenu.onclick = function(){
     new AppIcon({
-      clientHeight: clientHeight
+      clientHeight: clientHeight,
+      dialogOpt: {
+        
+      }
     });
   };
 };

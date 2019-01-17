@@ -6,18 +6,19 @@
   position: relative;
   min-width: 300px;
   min-height: 200px;
-  border: 1px solid @color;
-  border-radius: 6px;
-  background: #fff;
+  border: 1px solid @basecolor;
+  .border-radius;
+  background: @white;
   z-index: 2;
   .mod-hd{
+    overflow: hidden;
     position: relative;
     height: 30px;
     padding: 0 10px;
     line-height: 30px;
-    border-radius: 6px 6px 0 0;
-    background: -webkit-linear-gradient(top, #98baf3 0%, #fff 100%);
-    color: #333;
+    .border-radius(@radius: 6px 6px 0 0);
+    background: -webkit-linear-gradient(top, #98baf3 0%, @white 100%);
+    color: @black;
     .fork{
       position: absolute;
       top: 0;
@@ -45,9 +46,9 @@
       float: right;
       margin: 10px 0 0 4px;
       padding: 0 4px;
-      border-radius: 3px;
-      background: #cfa45c;
-      color: #fff;
+      .border-radius(@radius: 3px);
+      background: @yellow;
+      color: @white;
       line-height: 20px;
       font-size: 14px;
       font-weight: 300;
@@ -56,7 +57,7 @@
   }
 }
 #mark{
-  background: #666;
+  background: @gray;
   opacity: .3;
   position: absolute;
   left: 0;
