@@ -12,7 +12,7 @@ function LoadJs(urlList){
 }
 
 LoadJs([
-  'js/common.js',
+  'js/tools.js',
   'js/drag.js',
   'js/dialog.js',
   'js/appicon.js',
